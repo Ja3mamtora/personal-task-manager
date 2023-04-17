@@ -19,7 +19,7 @@ app.use(errorHandlerMiddleware)
 const start=async()=>{
     try {
         await connectDB(process.env.uri)
-        app.listen(8000,()=>{
+        app.listen(process.env.port||8000,()=>{
             console.log("Listening..");
         })
     } catch (error) {
